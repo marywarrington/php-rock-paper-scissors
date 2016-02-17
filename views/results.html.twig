@@ -7,11 +7,9 @@
     <div class="container">
         <h1>Rock Paper Scissors</h1>
         <h3><em>BOOM!</em></h3>
-        {% if results is not empty %}
-            {% for result in results %}
-            <h3>{{ result }} wins!</h3>
-            {% endfor %}
-        {% endif %}
+
+        <h3>{{ results }} wins!</h3>
+
     </div>
     <div class="container">
         <form action='/'>

@@ -15,16 +15,19 @@
     $app->get("/", function() use ($app) {
         return $app['twig']->render('index.html.twig', array('RPSinputs' => RPS::getAll()));
     });
-    $app->get("/player2", function() use ($app) {
-        return $app['twig']->render('player2.html.twig', array('RPSinputs' => RPS::getAll()));
+
+    $app->post("/player2", function() use ($app) {
+        $input1 = $_POST['player-one'];
+        $_SESSION['player-ones-input'] = $input1;
+        return $app['twig']->render('player2.html.twig');
     });
 
-    $app->get("/results", function() use ($app) {
-        $newGame = new RPS($_GET['player-one'], $_GET['player-two']);
-        $newGame->saveVal();
-        $result = $newGame->playRPS();
-        return $app['twig']->render('results.html.twig',array('results'=>RPS::getAll()
-        ));
+    $app->post("/results", function() use ($app) {
+        $input2 = $_POST['player-two'];
+        $_SESSION['player-twos-input'] = $input2;
+        $my_RPS = new RPS($_SESSION['player-ones-input'], $input2);
+        $results = $my_RPS->playRPS($_SESSION['player-ones-input'], $input2);
+        return $app['twig']->render('results.html.twig', array('results' => $results));
     });
 
     return $app;

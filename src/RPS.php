@@ -1,34 +1,7 @@
 <?php
     class RPS
     {
-        private $input1;
-        private $input2;
 
-        function __construct($input1, $input2)
-        {
-            $this->input1 = $input1;
-            $this->input2 = $input2;
-        }
-
-        function getInput1()
-        {
-            return $this->input1;
-        }
-
-        function setInput1($input1)
-        {
-            $this->input1 = $input1;
-        }
-
-        function getInput2()
-        {
-            return $this->input2;
-        }
-
-        function setInput2($input2)
-        {
-            $this->input2 = $input2;
-        }
 
         function playRPS($input1, $input2)
         {
