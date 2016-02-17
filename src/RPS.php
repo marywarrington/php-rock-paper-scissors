@@ -25,7 +25,7 @@
             return $this->input2;
         }
 
-        function setInput1($input2)
+        function setInput2($input2)
         {
             $this->input2 = $input2;
         }

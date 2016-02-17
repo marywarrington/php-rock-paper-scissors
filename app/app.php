@@ -18,10 +18,10 @@
 
     $app->post("/results", function() use ($app) {
         $newGame = new RPS($_POST['player-one'], $_POST['player-two']);
-        $newPlayerOne->saveVal();
+        $newGame->saveVal();
         $result = $newGame->playRPS();
 
-        return $app['twig']->render('index.html.twig',array('result'=>$result
+        return $app['twig']->render('index.html.twig',array('results'=>RPS::getAll()
         ));
     });
 

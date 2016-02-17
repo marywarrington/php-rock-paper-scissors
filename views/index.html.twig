@@ -29,8 +29,10 @@
         </form>
     </div>
     <div class="container">
-        {% if result is not empty %}
+        {% if results is not empty %}
+            {% for result in results %}
             <h3>{{ result }} wins!</h3>
+            {% endfor %}
         {% endif %}
     </div>
   </body>
