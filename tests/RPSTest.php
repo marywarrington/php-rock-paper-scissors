@@ -22,13 +22,32 @@
             //Arrange
             $test_RPS = new RPS;
             $input1 = "rock";
-            $input2 = "paper";
+            $input2 = "scissors";
+            $input3 = "paper";
 
             //Act
-            $result = $test_RPS->playRPS($input1, $input2);
+            $result1 = $test_RPS->playRPS($input1, $input2);
+            $result2 = $test_RPS->playRPS($input1, $input3);
 
             //Assert
-            $this->assertEquals("Player 1", $result);
+            $this->assertEquals("Player 1", $result1);
+            $this->assertEquals("Player 2", $result2);
+        }
+        function test_playRPS_paper()
+        {
+            //Arrange
+            $test_RPS = new RPS;
+            $input1 = "paper";
+            $input2 = "scissors";
+            $input3 = "rock";
+
+            //Act
+            $result1 = $test_RPS->playRPS($input1, $input2);
+            $result2 = $test_RPS->playRPS($input1, $input3);
+
+            //Assert
+            $this->assertEquals("Player 2", $result1);
+            $this->assertEquals("Player 1", $result2);
         }
     }
  ?>
