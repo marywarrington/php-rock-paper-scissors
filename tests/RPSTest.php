@@ -49,5 +49,21 @@
             $this->assertEquals("Player 2", $result1);
             $this->assertEquals("Player 1", $result2);
         }
+        function test_playRPS_scissors()
+        {
+            //Arrange
+            $test_RPS = new RPS;
+            $input1 = "scissors";
+            $input2 = "paper";
+            $input3 = "rock";
+
+            //Act
+            $result1 = $test_RPS->playRPS($input1, $input2);
+            $result2 = $test_RPS->playRPS($input1, $input3);
+
+            //Assert
+            $this->assertEquals("Player 1", $result1);
+            $this->assertEquals("Player 2", $result2);
+        }
     }
  ?>
