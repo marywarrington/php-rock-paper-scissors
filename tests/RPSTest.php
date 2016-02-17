@@ -17,5 +17,18 @@
             //Assert
             $this->assertEquals("draw", $result);
         }
+        function test_playRPS_rock()
+        {
+            //Arrange
+            $test_RPS = new RPS;
+            $input1 = "rock";
+            $input2 = "paper";
+
+            //Act
+            $result = $test_RPS->playRPS($input1, $input2);
+
+            //Assert
+            $this->assertEquals("Player 1", $result);
+        }
     }
  ?>
