@@ -7,33 +7,14 @@
     <div class="container">
         <h1>Rock Paper Scissors</h1>
         <h3><em>BOOM!</em></h3>
-        <form action='/'>
+        <form action='/player2'>
             <div class="col-md-6">
                 <h2>Player 1</h2>
                 <button type='submit' class='btn btn-success' name='player-one' value='rock'>Rock</button>
                 <button type='submit' class='btn btn-success' name='player-one' value='paper'>Paper</button>
                 <button type='submit' class='btn btn-success' name='player-one' value='scissors'>Scissors</button>
             </div>
-            <div class="col-md-6">
-                <h2>Player 2</h2>
-                <button type='submit' class='btn btn-warning' name='player-two' value='rock'>Rock</button>
-                <button type='submit' class='btn btn-warning' name='player-two' value='paper'>Paper</button>
-                <button type='submit' class='btn btn-warning' name='player-two' value='scissors'>Scissors</button>
-            </div>
         </form>
     </div><!--master container-->
-    <hr>
-    <div class="container">
-        <form action='/results'>
-            <button type='submit' class='btn btn-primary' name='submit' value='submit'>Submit!</button>
-        </form>
-    </div>
-    <div class="container">
-        {% if results is not empty %}
-            {% for result in results %}
-            <h3>{{ result }} wins!</h3>
-            {% endfor %}
-        {% endif %}
-    </div>
   </body>
 </html>

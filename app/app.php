@@ -15,13 +15,15 @@
     $app->get("/", function() use ($app) {
         return $app['twig']->render('index.html.twig', array('RPSinputs' => RPS::getAll()));
     });
+    $app->get("/player2", function() use ($app) {
+        return $app['twig']->render('player2.html.twig', array('RPSinputs' => RPS::getAll()));
+    });
 
-    $app->post("/results", function() use ($app) {
-        $newGame = new RPS($_POST['player-one'], $_POST['player-two']);
+    $app->get("/results", function() use ($app) {
+        $newGame = new RPS($_GET['player-one'], $_GET['player-two']);
         $newGame->saveVal();
         $result = $newGame->playRPS();
-
-        return $app['twig']->render('index.html.twig',array('results'=>RPS::getAll()
+        return $app['twig']->render('results.html.twig',array('results'=>RPS::getAll()
         ));
     });
 
