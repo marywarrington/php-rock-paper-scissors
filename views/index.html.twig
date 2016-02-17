@@ -4,10 +4,36 @@
     {% include '/includes/head.html.twig' %}
   </head>
   <body>
-    {% include '/includes/navbar.html.twig' %}
     <div class="container">
-      {% include '/includes/message.html.twig'%}
-      {% include '/includes/form.html.twig' %}
+        <h1>Rock Paper Scissors</h1>
+        <h3><em>BOOM!</em></h3>
+        <form action='/'>
+            <div class="col-md-6">
+                <h2>Player 1</h2>
+                <button type='submit' class='btn btn-success' name='player-one' value='rock'>Rock</button>
+                <button type='submit' class='btn btn-success' name='player-one' value='paper'>Paper</button>
+                <button type='submit' class='btn btn-success' name='player-one' value='scissors'>Scissors</button>
+            </div>
+        </form>
+        <form action="/">
+            <div class="col-md-6">
+                <h2>Player 2</h2>
+                <button type='submit' class='btn btn-warning' name='player-two' value='rock'>Rock</button>
+                <button type='submit' class='btn btn-warning' name='player-two' value='paper'>Paper</button>
+                <button type='submit' class='btn btn-warning' name='player-two' value='scissors'>Scissors</button>
+            </div>
+        </form>
+    </div><!--master container-->
+    <hr>
+    <div class="container">
+        <form action='/results'>
+            <button type='submit' class='btn btn-primary' name='submit' value='submit'>Submit!</button>
+        </form>
+    </div>
+    <div class="container">
+        {% if result is not empty %}
+            <h3>{{ result }} wins!</h3>
+        {% endif %}
     </div>
   </body>
 </html>
